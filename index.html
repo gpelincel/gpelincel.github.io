@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Gabriel Pelincel Ramalho</title>
 </head>
 
 <body>
     <nav class="navbar">
         <ul>
-            <img class="icon-img" src="https://picsum.photos/100/100" alt="">
+            <img class="icon-img" src="assets/img/icon.jpeg" alt="">
             <li><b>Nome</b><br>
                 Gabriel Pelincel Ramalho
             </li>
@@ -30,60 +32,133 @@
         </ul>
     </nav>
     <main>
-        <div class="content skills">
-            <h1>Skills</h1>
-            <p>HTML</p>
-            <div class="speedometer">
-                <div class="ola">
-                    <div class="tick"></div>
+        <div class="content">
+            <h2>Habilidades</h2>
+
+            <div class="skills">
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="rateBox">
+                        <div class="backLiquid" style="height: 169px"></div>
+                        <div class="liquid" style="height: 169px"></div>
+                    </div>
+                    <p>90%</p>
                 </div>
-            </div>
-            <p>CSS</p>
-            <div class="speedometer">
-                <div class="ola">
-                    <div class="tick"></div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="rateBox">
+                        <div class="backLiquid" style="height: 169px"></div>
+                        <div class="liquid" style="height: 169px"></div>
+                    </div>
+                    <p>90%</p>
                 </div>
-            </div>
-            <p>BOOTSTRAP</p>
-            <div class="speedometer">
-                <div class="ola">
-                    <div class="tick"></div>
+                <div class="skill">
+                    <p>Js</p>
+                    <div class="rateBox">
+                        <div class="backLiquid" style="height: 131px"></div>
+                        <div class="liquid" style="height: 131px"></div>
+                    </div>
+                    <p>70%</p>
                 </div>
-            </div>
-            <p>PHP</p>
-            <div class="speedometer">
-                <div class="ola">
-                    <div class="tick"></div>
+                <div class="skill">
+                    <p>PHP</p>
+                    <div class="rateBox">
+                        <div class="backLiquid" style="height: 159px"></div>
+                        <div class="liquid" style="height: 159px"></div>
+                    </div>
+                    <p>85%</p>
                 </div>
-            </div>
-            <p>C#</p>
-            <div class="speedometer">
-                <div class="ola">
-                    <div class="tick"></div>
+                <div class="skill">
+                    <p>C#</p>
+                    <div class="rateBox">
+                        <div class="backLiquid" style="height: 141px"></div>
+                        <div class="liquid" style="height: 141px"></div>
+                    </div>
+                    <p>75%</p>
                 </div>
             </div>
         </div>
         <div class="content">
-            <h1>lorem</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, omnis dignissimos cum eos nulla
-                voluptates, eaque rem, iste aliquam earum pariatur modi? Debitis quae dolorem vel? Neque, optio quae!
-                Dolores.</p>
+            <h1>Projetos</h1>
+            <ul>
+                <li>
+                    <a href="chacara/index.html" class="project-link">Recanto dos Sonhos</a>
+                    <a href="#">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <div class="summary-content">
+                        <p>Projeto front-end responsivo utilizando bootstrap. O intuito do projeto é apresentar um
+                            imóvel para temporada e as atividades presentes na cidade do mesmo</p>
+                    </div>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Recanto dos Sonhos <a href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a><a href="chacara/index.html">
+                                <ion-icon name="globe-sharp"></ion-icon>
+                            </a>
+                        </summary>
+                        <div class="summary-content">
+                            <p>Projeto front-end responsivo utilizando bootstrap. O intuito do projeto é apresentar um
+                                imóvel para temporada e as atividades presentes na cidade do mesmo</p>
+
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Recanto dos Sonhos <a href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a><a href="chacara/index.html">
+                                <ion-icon name="globe-sharp"></ion-icon>
+                            </a>
+                        </summary>
+                        <div class="summary-content">
+                            <p>Projeto front-end responsivo utilizando bootstrap. O intuito do projeto é apresentar um
+                                imóvel para temporada e as atividades presentes na cidade do mesmo</p>
+
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Recanto dos Sonhos <a href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a><a href="chacara/index.html">
+                                <ion-icon name="globe-sharp"></ion-icon>
+                            </a>
+                        </summary>
+                        <div class="summary-content">
+                            <p>Projeto front-end responsivo utilizando bootstrap. O intuito do projeto é apresentar um
+                                imóvel para temporada e as atividades presentes na cidade do mesmo</p>
+
+                        </div>
+                    </details>
+                </li>
+            </ul>
         </div>
         <div class="content">
             <h1>Lorem</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio fugiat perferendis consequuntur aut
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio fugiat perferendis consequuntur
+                aut
                 quo iure atque a iusto earum, qui explicabo dicta corrupti eum sint mollitia dignissimos impedit
                 aspernatur. Aliquam.</p>
         </div>
         <div class="content">
             <h1>lorem</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, omnis dignissimos cum eos nulla
-                voluptates, eaque rem, iste aliquam earum pariatur modi? Debitis quae dolorem vel? Neque, optio quae!
+                voluptates, eaque rem, iste aliquam earum pariatur modi? Debitis quae dolorem vel? Neque, optio
+                quae!
                 Dolores.</p>
         </div>
         <div class="content">
             <h1>Lorem</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio fugiat perferendis consequuntur aut
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio fugiat perferendis consequuntur
+                aut
                 quo iure atque a iusto earum, qui explicabo dicta corrupti eum sint mollitia dignissimos impedit
                 aspernatur. Aliquam.</p>
         </div>

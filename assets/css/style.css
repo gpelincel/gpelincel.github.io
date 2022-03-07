@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.content{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    padding: 10px;
+    text-align: justify;
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.content ul{
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    text-align: left;
+}
+
+.project-link:hover + div.summary-content{
+    display: none !important;
+}
+
+.content summary{
+    font-size: 20px;
+}
+
+.content a{
+    font-size: 25px;
+}
+
+.summary-content{
+    margin-top: 5px;
+}
+
+.skills{
+    display: flex;
+}
+
+.skill{
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    margin: 20px;
+}
+
+.icon-img{
+    border-radius:50%;
+    padding: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+ul{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10px;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+li{
+    flex-grow: 1;
+}
+
+a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.rateBox{
+    height: 150px;
+    width: 50px;
+    border: #FFF 4px solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    transform: translate(0.1%);
+}
+
+@keyframes liquid-anim{
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.liquid, .backLiquid{
+    background: #FFF;
+    border-radius: 35%;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: liquid-anim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+    position: absolute;
+    bottom: -25%;
+}
+
+.backLiquid {
+    background: rgb(160, 160, 160);
+    animation-direction: alternate;
+}
