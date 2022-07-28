@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/slide-in.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/bdcc87c8b0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="img/XI.png" type="image/x-icon">
     <title>XI de Agosto | Home</title>
 </head>
@@ -49,7 +50,7 @@
                     <a class="btn btn-ghost text-white"><i class="text-2xl fas fa-sign-out-alt"></i></a>
                 </div>
             </nav>
-            <main class="flex justify-center flex-grow">
+            <main class="flex items-center flex-grow flex-col">
 
                 <div class="hidden lg:block bg-white text-black text-center mt-10 h-2/5 m-4 p-2">
                     <h1 class="mb-3">Nosso status atual</h1>
@@ -157,6 +158,83 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="my-24 w-3/4 p-4 rounded">
+                    <canvas id="myChart"></canvas>
+                    <script>
+                        const labels = [
+                            'January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                        ];
+
+                        const data = {
+                            labels: labels,
+                            datasets: [{
+                                color: 'white',
+                                label: 'My First dataset',
+                                backgroundColor: 'rgb(0, 255, 0)',
+                                borderColor: 'rgb(0, 255, 0)',
+                                data: [0, 10, 5, 2, 20, 30, 45],
+                                tension: 0.2,
+                            }]
+                        };
+
+                        const DISPLAY = true;
+                        const BORDER = true;
+                        const CHART_AREA = true;
+                        const TICKS = true;
+
+                        const config = {
+                            type: 'line',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Status atual XI de Agosto',
+                                        color: 'white'
+                                    }
+                                },
+                                
+                                scales: {
+                                    x: {
+                                        grid: {
+                                            display: DISPLAY,
+                                            drawBorder: BORDER,
+                                            drawOnChartArea: CHART_AREA,
+                                            drawTicks: TICKS,
+                                            color: 'white'
+                                        },
+                                        ticks: {
+                                            color: 'white'
+                                        }
+                                    },
+                                    y: {
+                                        grid: {
+                                            drawBorder: false,
+                                            color: function (context) {
+                                                return '#FFF';
+                                            },
+                                        },
+                                        ticks: {
+                                            color: 'white'
+                                        }
+                                    }
+                                }
+                            },
+                        };
+
+                        const myChart = new Chart(
+                            document.getElementById('myChart'), config
+                        );
+                    </script>
+                </div>
+
 
             </main>
         </div>
