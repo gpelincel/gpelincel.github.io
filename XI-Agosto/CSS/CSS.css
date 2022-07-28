@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+*::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: none;
+}
+
+*::-webkit-scrollbar
+{
+	width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: rgb(114, 113, 113);
+}
+
+*::-webkit-scrollbar-corner{
+    display: none;
+}
+
+.main-bg {
+    background: #8E0E00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1F1C18, #8E0E00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1F1C18, #8E0E00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form-bg {
+    background: #ED213A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sidebar{
+    /* position: absolute; */
+    color: white;
+    width: 20vh;
+    text-align: center;
+    display: flex;
+}
+
+.sidebar ul li{
+    padding: 5px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    border-radius: 8px;
+    transition: ease 0.1s;
+}
+
+.sidebar ul li:hover{
+    background: rgba(166,173,186,0.2);
+}
+
+.sidebar .active{
+    background: black;
+}
+
+.sidebar .active:hover{
+    background: black;
+}
+
+#cards h1{
+    color: #D40D12;
+    font-weight: normal;
+}
+
+.card-body table td{
+    font-size: 0.8em;
+}
+
+#breadcumb{
+    color: white;
+}
+
+.btn-delete{
+    background: #D40D12;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.btn-edit{
+    background: #6419e6;
+    color: white;
+    transition: 0.3s ease;
+}
+.btn-edit:hover{
+    background: #5014b8;
+}
+
+.btn-delete:hover{
+  background: #8a090e;  
+}
+
+.table-container {
+    height:500px;
+}
+
+.search-btn:checked{
+    color: #000;
+}
+
