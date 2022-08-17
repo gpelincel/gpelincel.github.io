@@ -1,29 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-*{
+* {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
 
-*::-webkit-scrollbar-track
-{
-	border-radius: 10px;
-	background-color: none;
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: none;
 }
 
-*::-webkit-scrollbar
-{
-	width: 6px;
+*::-webkit-scrollbar {
+    width: 6px;
     height: 6px;
 }
 
-*::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	background-color: rgb(114, 113, 113);
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(114, 113, 113);
 }
 
-*::-webkit-scrollbar-corner{
+*::-webkit-scrollbar-corner {
     display: none;
 }
 
@@ -45,71 +42,86 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.sidebar{
+.bg-red {
+    background: #AA0000;
+}
+
+.sidebar {
     /* position: absolute; */
-    color: white;
+    /* color: white; */
     width: 20vh;
     text-align: center;
     display: flex;
 }
 
-.sidebar ul li{
+.sidebar ul li {
     padding: 5px;
     margin-bottom: 30px;
     margin-left: 10px;
-    border-radius: 8px;
     transition: ease 0.1s;
 }
 
-.sidebar ul li:hover{
-    background: rgba(166,173,186,0.2);
+.sidebar ul li:hover {
+    background: rgba(166, 173, 186, 0.3);
 }
 
-.sidebar .active{
-    background: black;
+.active-nav-link {
+    background: #D40D12;
+    color: white;
 }
 
-.sidebar .active:hover{
-    background: black;
+.active-nav-link:hover {
+    background: #D40D12;
 }
 
-#cards h1{
+#cards h1 {
     color: #D40D12;
     font-weight: normal;
 }
 
-.card-body table td{
+.card-body table td {
     font-size: 0.8em;
 }
 
-#breadcumb{
+/* #breadcumb{
     color: white;
-}
+} */
 
-.btn-delete{
+.btn-delete {
     background: #D40D12;
     color: white;
     transition: 0.3s ease;
+    border-radius: 8px;
+    text-transform: uppercase;
 }
 
-.btn-edit{
+.btn-edit {
     background: #6419e6;
     color: white;
     transition: 0.3s ease;
 }
-.btn-edit:hover{
+
+.btn-edit:hover {
     background: #5014b8;
 }
 
-.btn-delete:hover{
-  background: #8a090e;  
+.btn-delete:hover {
+    background: #8a090e;
+}
+
+.btn-clear {
+    --tw-border-opacity: 1;
+    border-color: hsl(var(--p)/var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--p)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--pc)/var(--tw-text-opacity));
 }
 
 .table-container {
-    height:500px;
+    height: 500px;
 }
 
-.search-btn:checked{
+.search-btn:checked {
     color: #000;
 }
-
