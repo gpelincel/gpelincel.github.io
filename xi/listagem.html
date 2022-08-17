@@ -14,14 +14,14 @@
     <title>XI de Agosto | Home</title>
 </head>
 
-<body class="main-bg">
+<body class="bg-base-300">
     <div class="drawer h-screen slide-in">
         <input id="my-drawer-3" type="checkbox" class="drawer-toggle">
         <div class="flex flex-col drawer-content">
             <nav class="w-full navbar">
                 <div class="flex-none lg:hidden">
                     <label for="my-drawer-3" class="btn btn-square btn-ghost">
-                        <i class="fas fa-bars text-white"></i>
+                        <i class="fas fa-bars"></i>
                     </label>
                 </div>
 
@@ -35,37 +35,39 @@
                         </ul>
                     </div>
                 </div>
-                <div class="navbar-center hidden text-white lg:flex">
-                    <ul class="menu menu-horizontal p-0">
-                        <li><a class="bg-black rounded mr-1" aria-disabled="true">Pessoas</a></li>
-                        <li><a>Banco</a></li>
-                        <li><a>Produtos/Serviços</a></li>
-                        <li><a>Caixa</a></li>
-                        <li><a>Financeiro</a></li>
-                        <li><a>Sistema</a></li>
+                <div class="navbar-center hidden lg:flex">
+                    <ul id="horizontal-nav" class="menu menu-horizontal">
+                        <li><a class="rounded active-nav-link text-white" aria-disabled="true"
+                                href="listagem.html">Pessoas</a></li>
+                        <li><a class="hover:shadow-lg rounded">Banco</a></li>
+                        <li><a class="hover:shadow-lg rounded">Produtos/Serviços</a></li>
+                        <li><a class="hover:shadow-lg rounded">Caixa</a></li>
+                        <li><a class="hover:shadow-lg rounded">Financeiro</a></li>
+                        <li><a class="hover:shadow-lg rounded">Sistema</a></li>
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn btn-ghost text-white"><i class="text-2xl fas fa-sign-out-alt"></i></a>
+                    <a class="btn btn-ghost hover:shadow-lg"><i class="text-2xl fas fa-sign-out-alt"></i></a>
                 </div>
             </nav>
 
             <div id="content" class="mt-5 flex">
                 <aside class="sidebar hidden lg:block">
                     <ul>
-                        <li class="active"><a aria-disabled="true">Sócios</a></li>
-                        <li><a href="">Dependentes</a></li>
-                        <li><a href="">Funcionários</a></li>
-                        <li><a href="">Arquivo Morto</a></li>
+                        <li class="rounded active-nav-link" aria-disabled="true"><a class="">Sócios</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="">Dependentes</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="">Funcionários</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="">Arquivo Morto</a></li>
                     </ul>
                 </aside>
                 <main class="w-full flex flex-col items-center">
-                    <nav id="tool-bar" class="">
-                        <ul class="menu menu-horizontal text-white rounded-box">
+                    <nav id="tool-bar" class="rounded shadow-xl p-3 mb-8 m-2 bg-red text-white">
+                        <ul class="menu menu-horizontal text-center">
                             <li>
-                                <a class="flex flex-col">
-                                    <i class="text-2xl fas fa-plus"></i><span>Cadastrar</span>
-                                </a>
+                                <label for="my-modal-3" class="modal-button rounded flex flex-col">
+                                    <i class="text-2xl fas fa-plus"></i>
+                                    <span>Cadastrar</span>
+                                </label>
                             </li>
                             <li>
                                 <a class="flex flex-col">
@@ -85,15 +87,15 @@
                             <form class="my-4 ml-3 hidden lg:block">
                                 <div class="input-search">
                                     <button><i class="fas fa-search"></i></button>
-                                    <input class="input bg-white text-black p-2 w-fit" name="search" type="search"
-                                        placeholder="" autocomplete="off" spellcheck="false">
+                                    <input class="input text-base-content input-bordered p-2 w-fit" name="search"
+                                        type="search" placeholder="" autocomplete="off" spellcheck="false">
                                 </div>
                             </form>
                         </ul>
                     </nav>
 
-                    <div class="table-container overflow-auto mb-10 lg:ml-10 rounded w-4/5 flex justify-center">
-                        <table class="table table-zebra relative overflow-auto w-full text-lg">
+                    <div class="table-container overflow-auto rounded drop-shadow-xl w-11/12">
+                        <table class="table table-zebra relative w-full">
                             <!-- head -->
                             <thead>
                                 <tr>
@@ -239,6 +241,231 @@
                 <li><a>Sistema</a></li>
             </ul>
         </aside>
+    </div>
+
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-3xl mb-5 font-bold text-center">Cadastrar sócio</h3>
+            <form action="" method="post">
+
+                <div id="nome-sobrenome" class="mb-5">
+                    <label class="label">
+                        <span><i class="fa-solid fa-id-card mr-1"></i>Nome completo</span>
+                    </label>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <input type="text" placeholder="Nome" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <input type="text" placeholder="Sobrenome" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="genero" class="">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div id="genero">
+                            <label class="label">
+                                <span><i class="fa-solid fa-mars-and-venus mr-1"></i>Gênero</span>
+                            </label>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Masculino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Feminino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Não informado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-briefcase mr-1"></i>Profissão</span>
+                            </label>
+                            <input type="text" placeholder="O sócio trabalha como..." class="input input-bordered" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="CPF_RG" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span>CPF</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span>RG</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="data-nsct_estado-civil" class="mb-5 grid grid-cols-2 gap-4">
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-user-friends mr-1"></i>Estado civil</span>
+                        </label>
+
+                        <div class="lg:grid grid-cols-2">
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Casado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Solteiro</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Divorciado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Viúvo</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-baby mr-1"></i>Data de Nascimento</span>
+                        </label>
+                        <input type="date" placeholder="" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="dt-aquisicao_categoria" class="mb-5">
+                    <div class="form-control grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-sitemap mr-1"></i>Categoria</span>
+                            </label>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Remido</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Padrão</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Escolinha</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data de Aquisição</span>
+                            </label>
+                            <input type="date" placeholder="" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="email_telefone" class="grid grid-cols-2 gap-4 mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-at mr-1"></i>Email</span>
+                        </label>
+                        <input type="email" placeholder="nome@dominio.com" class="input input-bordered w-full">
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-phone mr-1"></i>Telefone</span>
+                        </label>
+                        <input type="text" placeholder="(15) 00000-0000" class="input input-bordered w-full">
+                    </div>
+                </div>
+
+                <div id="endereco" class="mb-5">
+                    <label class="label">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i>Endereço</span>
+                    </label>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="CEP" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Cidade" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="text" placeholder="UF" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="Bairro" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Logradouro" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="number" min="1" placeholder="Nº" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" placeholder="Complemento" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="observacao" class="mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-clipboard mr-1"></i>Observação</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-32" style="resize: none;"
+                            placeholder="Observação sobre o sócio..."></textarea>
+                    </div>
+                </div>
+
+                <div id="btns">
+                    <button type="submit"><label class="btn btn-primary">CADASTRAR</label></button>
+                    <button type="reset"><label class="btn btn-warning">LIMPAR</label></button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 
