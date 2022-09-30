@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/CSS.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../CSS/slide-in.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/bdcc87c8b0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../img/XI.png" type="image/x-icon">
+    <title>XI de Agosto | Home</title>
+</head>
+
+<body class="bg-base-300">
+    <div class="drawer h-screen slide-in">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle">
+        <div class="flex flex-col drawer-content">
+            <nav class="w-full navbar">
+                <div class="flex-none lg:hidden">
+                    <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                </div>
+
+                <!-- NAVBAR MOBILE -->
+
+                <div class="navbar-start">
+                    <a href="../index.html" class="w-12"><img src="../img/XI.png" alt="logo"></a>
+                    <div id="breadcumb" class="text-sm breadcrumbs ml-2 w-full lg:hidden">
+                        <ul>
+                            <li>
+                                <a><i class="fas fa-home mb-1 mr-1"></i>Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NAVBAR DESKTOP -->
+
+                <div class="navbar-center hidden lg:flex">
+                    <ul id="horizontal-nav" class="menu menu-horizontal">
+                        <li><a class="rounded active-nav-link text-white" aria-disabled="true"
+                                href="listagem_socios.html">Pessoas</a></li>
+                        <li><a class="hover:shadow-lg rounded">Banco</a></li>
+                        <li><a class="hover:shadow-lg rounded">Produtos/Serviços</a></li>
+                        <li><a class="hover:shadow-lg rounded">Caixa</a></li>
+                        <li><a class="hover:shadow-lg rounded">Financeiro</a></li>
+                        <li><a class="hover:shadow-lg rounded">Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn btn-ghost hover:shadow-lg"><i class="text-2xl fas fa-sign-out-alt"></i></a>
+                </div>
+            </nav>
+
+            <!-- MENU LATERAL -->
+
+            <div id="content" class="mt-5 flex">
+                <aside class="sidebar hidden lg:block">
+                    <ul>
+                        <li class="rounded active-nav-link" aria-disabled="true"><a>Sócios</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="listagem_dependentes.html">Dependentes</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="">Funcionários</a></li>
+                        <li class="hover:shadow-lg rounded"><a href="">Arquivo Morto</a></li>
+                    </ul>
+                </aside>
+                <main class="w-full flex flex-col items-center">
+
+                    <!-- TOOLBAR TABELA -->
+
+                    <nav id="tool-bar" class="rounded shadow-xl p-3 mb-8 m-2 bg-red text-white">
+                        <ul class="menu menu-horizontal text-center">
+                            <li>
+                                <label for="modal-cad" class="modal-button rounded flex flex-col">
+                                    <i class="text-2xl fas fa-plus"></i>
+                                    <span>Cadastrar</span>
+                                </label>
+                            </li>
+                            <li>
+                                <a class="flex flex-col">
+                                    <i class="text-2xl fas fa-filter"></i>Filtrar
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex flex-col">
+                                    <i class="text-2xl fas fa-file-pdf"></i>Gerar PDF
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex flex-col">
+                                    <i class="text-2xl fas fa-file-excel"></i>Gerar planilha
+                                </a>
+                            </li>
+                            <form class="my-4 ml-3 hidden lg:block">
+                                <div class="input-search">
+                                    <button><i class="fas fa-search"></i></button>
+                                    <input class="input text-base-content input-bordered p-2 w-fit" name="search"
+                                        type="search" placeholder="" autocomplete="off" spellcheck="false">
+                                </div>
+                            </form>
+                        </ul>
+                    </nav>
+
+                    <!-- TABELA DE SÓCIOS -->
+
+                    <div id="socio-table" class="table-container overflow-auto rounded drop-shadow-xl w-11/12">
+                        <table class="table table-zebra relative w-full">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="text-lg">Nome</th>
+                                    <th class="text-lg">Gênero</th>
+                                    <th class="text-lg">CPF</th>
+                                    <th class="text-lg">Dt Nasct</th>
+                                    <th class="text-lg">Dt Aquisição</th>
+                                    <th class="text-lg">Valor da mensalidade</th>
+                                    <th class="text-lg">Categoria</th>
+                                    <th class="text-lg">Telefone</th>
+                                    <th class="text-lg">Editar</th>
+                                    <th class="text-lg">Excluir</th>
+                                </tr>
+                            </thead>
+                            <div class="overflow-auto">
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>
+                                            <label class="modal-button cursor-pointer" for="modal-socio">
+                                                Gabriel Pelincel Ramalho
+                                            </label>
+                                        </td>
+                                        <td>M</td>
+                                        <td>000.000.000-25</td>
+                                        <td>00-00-0000</td>
+                                        <td>00-00-0000</td>
+                                        <td>R$ 0000,00</td>
+                                        <td>Remido</td>
+                                        <td>(00) 00000-0000</td>
+                                        <td>
+                                            <label class="modal-button btn-edit rounded p-2" for="modal-update">
+                                                <i class="fas fa-edit fa-fw"></i>
+                                            </label>
+                                        </td>
+                                        <td><button class="btn-delete rounded p-2"><i
+                                                    class="fas fa-trash fa-fw"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Gabriel Pelincel Ramalho</td>
+                                        <td>M</td>
+                                        <td>000.000.000-25</td>
+                                        <td>00-00-0000</td>
+                                        <td>00-00-0000</td>
+                                        <td>R$ 0000,00</td>
+                                        <td>Remido</td>
+                                        <td>(00) 00000-0000</td>
+                                        <td><button class="btn-edit rounded p-2"><i
+                                                    class="fas fa-edit fa-fw"></i></button></td>
+                                        <td><button class="btn-delete rounded p-2"><i
+                                                    class="fas fa-trash fa-fw"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- MENU LATERAL MOBILE -->
+
+        <aside class="drawer-side">
+            <label for="my-drawer-3" class="drawer-overlay"></label>
+            <ul class="p-4 overflow-y-auto menu w-60 md:w-80 bg-base-100">
+                <li><a>Pessoas</a></li>
+                <li><a>Banco</a></li>
+                <li><a>Produtos/Serviços</a></li>
+                <li><a>Caixa</a></li>
+                <li><a>Financeiro</a></li>
+                <li><a>Sistema</a></li>
+            </ul>
+        </aside>
+    </div>
+
+
+    <!-- MODAL FORM CADASTRO SÓCIO -->
+
+
+    <input type="checkbox" id="modal-cad" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="modal-cad" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-3xl mb-5 font-bold text-center">Cadastrar sócio</h3>
+            <form action="" method="post">
+
+                <div id="nome-sobrenome" class="mb-5">
+                    <label class="label">
+                        <span><i class="fa-solid fa-id-card mr-1"></i>Nome completo</span>
+                    </label>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <input type="text" placeholder="Nome" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <input type="text" placeholder="Sobrenome" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="genero" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div id="genero">
+                            <label class="label">
+                                <span><i class="fa-solid fa-mars-and-venus mr-1"></i>Gênero</span>
+                            </label>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Masculino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Feminino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Não informado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-briefcase mr-1"></i>Profissão</span>
+                            </label>
+                            <input type="text" placeholder="O sócio trabalha como..." class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="CPF_RG" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span>CPF</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span>RG</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="data-nsct_estado-civil" class="mb-5 grid grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-user-friends mr-1"></i>Estado civil</span>
+                        </label>
+
+                        <div class="lg:grid grid-cols-2">
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Casado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Solteiro</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Divorciado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Viúvo</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-baby mr-1"></i>Data de Nascimento</span>
+                        </label>
+                        <input type="date" placeholder="" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="dt-aquisicao_categoria" class="mb-5">
+                    <div class="form-control grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-sitemap mr-1"></i>Categoria</span>
+                                <a href=""><i class="text-primary text-xl fa-solid fa-square-plus"></i></a>
+                            </label>
+
+                            <select class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Escolha a categoria do sócio</option>
+                                <option value="">Han Solo</option>
+                                <option value="">Greedo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data de Aquisição</span>
+                            </label>
+                            <input type="date" placeholder="" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="valor-mensalidade_data-mensalidade" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-money-check-alt mr-1"></i>Valor da mensalidade</span>
+                            </label>
+                            <input type="number" placeholder="R$ 00000,00" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data da mensalidade</span>
+                            </label>
+                            <input type="date" placeholder="" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="email_telefone" class="grid grid-cols-2 gap-4 mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-at mr-1"></i>Email</span>
+                        </label>
+                        <input type="email" placeholder="nome@dominio.com" class="input input-bordered w-full">
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-phone mr-1"></i>Telefone</span>
+                        </label>
+                        <input type="text" placeholder="(15) 00000-0000" class="input input-bordered w-full">
+                    </div>
+                </div>
+
+                <div id="endereco" class="mb-5">
+                    <label class="label">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i>Endereço</span>
+                    </label>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="CEP" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Cidade" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="text" placeholder="UF" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="Bairro" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Logradouro" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="number" min="1" placeholder="Nº" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" placeholder="Complemento" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="observacao" class="mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-clipboard mr-1"></i>Observação</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-32" style="resize: none;"
+                            placeholder="Observação sobre o sócio..."></textarea>
+                    </div>
+                </div>
+
+                <div id="btns">
+                    <button type="submit" class="btn btn-primary btn-active">CADASTRAR</button>
+                    <button type="reset" class="btn btn-warning btn-active">LIMPAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL UPDATE SÓCIO -->
+
+    <input type="checkbox" id="modal-update" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="modal-update" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-3xl mb-5 font-bold text-center">Atualizar sócio</h3>
+            <form action="" method="post">
+
+                <div id="nome-sobrenome" class="mb-5">
+                    <label class="label">
+                        <span><i class="fa-solid fa-id-card mr-1"></i>Nome completo</span>
+                    </label>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <input type="text" placeholder="Nome" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <input type="text" placeholder="Sobrenome" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="genero" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div id="genero">
+                            <label class="label">
+                                <span><i class="fa-solid fa-mars-and-venus mr-1"></i>Gênero</span>
+                            </label>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Masculino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Feminino</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="genero" class="radio" />
+                                    <span class="label-text">Não informado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-briefcase mr-1"></i>Profissão</span>
+                            </label>
+                            <input type="text" placeholder="O sócio trabalha como..." class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="CPF_RG" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span>CPF</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span>RG</span>
+                            </label>
+                            <input type="text" placeholder="431.162.578/25" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="data-nsct_estado-civil" class="mb-5 grid grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-user-friends mr-1"></i>Estado civil</span>
+                        </label>
+
+                        <div class="lg:grid grid-cols-2">
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Casado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Solteiro</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Divorciado</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="estado-civil" class="radio" />
+                                    <span class="label-text">Viúvo</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-baby mr-1"></i>Data de Nascimento</span>
+                        </label>
+                        <input type="date" placeholder="" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="dt-aquisicao_categoria" class="mb-5">
+                    <div class="form-control grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-sitemap mr-1"></i>Categoria</span>
+                            </label>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Remido</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Padrão</span>
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="radio" name="categoria" class="radio" />
+                                    <span class="label-text">Escolinha</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data de Aquisição</span>
+                            </label>
+                            <input type="date" placeholder="" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="valor-mensalidade_data-mensalidade" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-money-check-alt mr-1"></i>Valor da mensalidade</span>
+                            </label>
+                            <input type="number" placeholder="R$ 00000,00" class="input input-bordered" />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data da mensalidade</span>
+                            </label>
+                            <input type="date" placeholder="" class="input input-bordered" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="email_telefone" class="grid grid-cols-2 gap-4 mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-at mr-1"></i>Email</span>
+                        </label>
+                        <input type="email" placeholder="nome@dominio.com" class="input input-bordered w-full">
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-phone mr-1"></i>Telefone</span>
+                        </label>
+                        <input type="text" placeholder="(15) 00000-0000" class="input input-bordered w-full">
+                    </div>
+                </div>
+
+                <div id="endereco" class="mb-5">
+                    <label class="label">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i>Endereço</span>
+                    </label>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="CEP" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Cidade" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="text" placeholder="UF" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control mb-2">
+                        <input type="text" placeholder="Bairro" class="input input-bordered" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" placeholder="Logradouro" class="input input-bordered" />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="number" min="1" placeholder="Nº" class="input input-bordered" />
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" placeholder="Complemento" class="input input-bordered" />
+                    </div>
+                </div>
+
+                <div id="observacao" class="mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-clipboard mr-1"></i>Observação</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-32" style="resize: none;"
+                            placeholder="Observação sobre o sócio..."></textarea>
+                    </div>
+                </div>
+
+                <div id="btns">
+                    <button type="submit" class="btn btn-primary btn-active">ATUALIZAR</button>
+                    <button type="reset" class="btn btn-warning btn-active">LIMPAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DADOS SÓCIO -->
+
+    <input type="checkbox" id="modal-socio" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="modal-socio" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <div class="tabs">
+                <a id="tab-socio" class="tab tab-lifted tab-active">Sócio</a>
+                <a id="tab-dependente" class="tab tab-lifted">Dependentes</a>
+            </div>
+
+            <!-- DADOS DO SÓCIO -->
+            <div id="dados-socio-container">
+                <h3 class="text-3xl mb-5 font-bold text-center">Dados do sócio</h3>
+                <div id="nome-sobrenome" class="mb-5">
+                    <label class="label">
+                        <span><i class="fa-solid fa-id-card mr-1"></i>Nome completo</span>
+                    </label>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <input class="input input-bordered" value="Gabriel" disabled>
+                        <input class="input input-bordered" value="Pelincel" disabled />
+                    </div>
+                </div>
+
+                <div id="genero" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div id="genero">
+                            <label class="label">
+                                <span><i class="fa-solid fa-mars-and-venus mr-1"></i>Gênero</span>
+                            </label>
+
+                            <input class="input input-bordered w-full" value="Masculino" disabled>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-briefcase mr-1"></i>Profissão</span>
+                            </label>
+                            <input class="input input-bordered" value="Gostosa ( ͡° ͜ʖ ͡°)" disabled />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="CPF_RG" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span>CPF</span>
+                            </label>
+                            <input class="input input-bordered" value="000.000.000-00" disabled />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span>RG</span>
+                            </label>
+                            <input class="input input-bordered" value="000.000.000-00" disabled />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="data-nsct_estado-civil" class="mb-5 grid grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-user-friends mr-1"></i>Estado civil</span>
+                        </label>
+
+                        <input class="input input-bordered" value="Soltinho no pagode" disabled />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-baby mr-1"></i>Data de Nascimento</span>
+                        </label>
+                        <input type="date" class="input input-bordered" value="2005-03-26" disabled />
+                    </div>
+                </div>
+
+                <div id="dt-aquisicao_categoria" class="mb-5">
+                    <div class="form-control grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-sitemap mr-1"></i>Categoria</span>
+                            </label>
+
+                            <input class="input input-bordered" value="Remido" disabled />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data de Aquisição</span>
+                            </label>
+                            <input type="date" class="input input-bordered" value="2022-08-25" disabled />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="valor-mensalidade_data-mensalidade" class="mb-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-money-check-alt mr-1"></i>Valor da mensalidade</span>
+                            </label>
+                            <input type="number" value="10000.00" class="input input-bordered" disabled />
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label">
+                                <span><i class="fas fa-calendar mr-1"></i>Data da mensalidade</span>
+                            </label>
+                            <input type="date" class="input input-bordered" value="2022-08-25" disabled />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="email_telefone" class="grid grid-cols-2 gap-4 mb-5">
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-at mr-1"></i>Email</span>
+                        </label>
+                        <input type="email" value="nome@dominio.com" class="input input-bordered w-full" disabled>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span><i class="fas fa-phone mr-1"></i>Telefone</span>
+                        </label>
+                        <input type="text" value="(15) 00000-0000" class="input input-bordered w-full" disabled>
+                    </div>
+                </div>
+
+                <div id="endereco" class="mb-5">
+                    <label class="label">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i>Endereço</span>
+                    </label>
+
+                    <div class="form-control mb-2">
+                        <input type="text" value="18550-000" class="input input-bordered" disabled />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" value="Boituva" class="input input-bordered" disabled />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="text" value="SP" class="input input-bordered" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-control mb-2">
+                        <input type="text" value="Periquito molhado" class="input input-bordered" disabled />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-2">
+                        <div class="form-control col-span-2">
+                            <input type="text" value="Rua Agnaldo Mosquivero" class="input input-bordered" disabled />
+                        </div>
+                        <div class="form-control col-start-3">
+                            <input type="number" min="1" value="99" class="input input-bordered" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" value="Não informado" class="input input-bordered" disabled />
+                    </div>
+                </div>
+
+                <div id="observacao" class="mb-5">
+                    <label class="label">
+                        <span><i class="fas fa-clipboard mr-1"></i>Observação</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered h-32 w-full" style="resize: none;"
+                        disabled>EEEEEEEEEITA COMO TA DE BOA</textarea>
+                </div>
+            </div>
+            
+            <!-- DEPENDENTES DO SÓCIO -->
+            <div id="dependentes-socio-container" class="hidden">
+                <h3 class="text-3xl mb-5 font-bold text-center">Dependentes do sócio</h3>
+                <!-- TABELA DE DEPENDENTES DO SÓCIO LISTADO -->
+                <div class="table-container overflow-auto rounded drop-shadow-xl w-11/12">
+                    <table class="table table-zebra relative w-full">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="text-lg">Nome</th>
+                                <th class="text-lg">Gênero</th>
+                                <th class="text-lg">CPF</th>
+                                <th class="text-lg">Dt Nasct</th>
+                                <th class="text-lg">Grau</th>
+                                <th class="text-lg">Telefone</th>
+                                <th class="text-lg">Editar</th>
+                                <th class="text-lg">Excluir</th>
+                            </tr>
+                        </thead>
+                        <div class="overflow-auto">
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>
+                                        <a href="#" class="cursor-pointer">
+                                            Gabriel Pelincel Ramalho
+                                        </a>
+                                    </td>
+                                    <td>M</td>
+                                    <td>000.000.000-25</td>
+                                    <td>00-00-0000</td>
+                                    <td>Filho</td>
+                                    <td>(00) 00000-0000</td>
+                                    <td>
+                                        <label class="modal-button btn-edit rounded p-2" for="modal-update">
+                                            <i class="fas fa-edit fa-fw"></i>
+                                        </label>
+                                    </td>
+                                    <td><button class="btn-delete rounded p-2"><i
+                                                class="fas fa-trash fa-fw"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <td>
+                                        <a href="#" class="cursor-pointer">
+                                            Gabriel Pelincel Ramalho
+                                        </a>
+                                    </td>
+                                    <td>M</td>
+                                    <td>000.000.000-25</td>
+                                    <td>00-00-0000</td>
+                                    <td>Filho</td>
+                                    <td>(00) 00000-0000</td>
+                                    <td>
+                                        <label class="modal-button btn-edit rounded p-2" for="modal-update">
+                                            <i class="fas fa-edit fa-fw"></i>
+                                        </label>
+                                    </td>
+                                    <td><button class="btn-delete rounded p-2"><i
+                                                class="fas fa-trash fa-fw"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

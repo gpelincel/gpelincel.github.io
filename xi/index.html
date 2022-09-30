@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/CSS.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="CSS/slide-in.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/bdcc87c8b0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="img/XI.png" type="image/x-icon">
+    <title>XI de Agosto | Home</title>
+</head>
+
+<body class="bg-base-300">
+    <div class="drawer h-screen slide-in">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle">
+        <div class="flex flex-col drawer-content">
+            <nav class="w-full navbar">
+                <div class="flex-none lg:hidden">
+                    <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                </div>
+
+                <div class="navbar-start">
+                    <a href="index.html" class="w-12"><img src="img/XI.png" alt="logo"></a>
+                    <div id="breadcumb" class="text-sm breadcrumbs ml-2 w-full lg:hidden">
+                        <ul>
+                            <li>
+                                <a><i class="fas fa-home mb-1 mr-1"></i>Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal">
+                        <li><a class="hover:shadow-lg rounded" href="./pessoas/listagem_socios.html">Pessoas</a></li>
+                        <li><a class="hover:shadow-lg rounded">Banco</a></li>
+                        <li><a class="hover:shadow-lg rounded">Produtos/Serviços</a></li>
+                        <li><a class="hover:shadow-lg rounded">Caixa</a></li>
+                        <li><a class="hover:shadow-lg rounded">Financeiro</a></li>
+                        <li><a class="hover:shadow-lg rounded">Sistema</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn btn-ghost hover:shadow-lg"><i class="text-2xl fas fa-sign-out-alt"></i></a>
+                </div>  
+            </nav>
+            <main class="flex items-center flex-grow flex-col">
+
+                <div class="hidden lg:block text-white bg-red text-center mt-16 h-1/4 m-4 px-4 pt-4 shadow-xl">
+                    <h2 class="mb-3">Nosso status atual</h2>
+                    <h1 class="text-3xl">Como anda o XI de Agosto?</h1>
+
+                    <div id="cards" class="flex gap-x-4 mt-10 text-white relative">
+                        <div class="card bg-black w-1/3">
+                            <div class="card-body text-start">
+                                <h1 class="card-title">Cotas</h1>
+                                <h2 class="text-2xl">+20 Mil</h2>
+                                <table>
+                                    <tr class="flex justify-between">
+                                        <td>Ativas</td>
+                                        <td>0000</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Inativas</td>
+                                        <td>0000</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Remidas</td>
+                                        <td>0000</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card bg-black w-2/5">
+                            <div class="card-body text-start">
+                                <h1 class="card-title">Saldo inadimplente</h1>
+                                <h2 class="text-2xl">R$ -2000,00</h2>
+                                <p>Saldo atual de inadimplência</p>
+                            </div>
+                        </div>
+
+                        <div class="card bg-black w-2/5">
+                            <div class="card-body text-start">
+                                <h1 class="card-title">Saldo de Contas</h1>
+                                <h2 class="text-2xl">R$ 20000,00</h2>
+                                <table>
+                                    <tr class="flex justify-between">
+                                        <td>Aplicação BR</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Bradesco</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Sicredi</td>
+                                        <td>R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Carteira</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card bg-black w-2/5">
+                            <div class="card-body text-start">
+                                <h1 class="card-title">Despesas do mês</h1>
+                                <h2 class="text-2xl">R$ 20000,00</h2>
+                                <table>
+                                    <tr class="flex justify-between">
+                                        <td>Pessoal</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Contas fixas</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Manutenção</td>
+                                        <td>R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Social</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card bg-black w-2/5">
+                            <div class="card-body text-start">
+                                <h1 class="card-title">Receita do mês</h1>
+                                <h2 class="text-2xl">R$ 20000,00</h2>
+                                <table>
+                                    <tr class="flex justify-between">
+                                        <td>Alugueis</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Patrocínio</td>
+                                        <td class="ml-auto">R$ 0000,00</td>
+                                    </tr>
+                                    <tr class="flex justify-between">
+                                        <td>Mensalidade</td>
+                                        <td>R$ 0000,00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-24 w-3/4 p-4 rounded-lg shadow-2xl bg-white">
+                    <canvas id="myChart"></canvas>
+                    <script>
+                        const labels = [
+                            'January',
+                            'February',
+                            'March',
+                            'April',
+                            'May',
+                            'June',
+                        ];
+
+                        const data = {
+                            labels: labels,
+                            datasets: [{
+                                color: 'white',
+                                label: 'My First dataset',
+                                backgroundColor: 'rgb(0, 255, 0)',
+                                borderColor: 'rgb(0, 255, 0)',
+                                data: [0, 10, 5, 2, 20, 30, 45],
+                                tension: 0.2,
+                            }]
+                        };
+
+                        const DISPLAY = true;
+                        const BORDER = true;
+                        const CHART_AREA = true;
+                        const TICKS = true;
+
+                        const config = {
+                            type: 'line',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Status atual XI de Agosto',
+                                        color: 'black'
+                                    }
+                                },
+                                
+                                scales: {
+                                    x: {
+                                        grid: {
+                                            display: DISPLAY,
+                                            drawBorder: BORDER,
+                                            drawOnChartArea: CHART_AREA,
+                                            drawTicks: TICKS,
+                                            color: 'black'
+                                        },
+                                        ticks: {
+                                            color: 'black'
+                                        }
+                                    },
+                                    y: {
+                                        grid: {
+                                            drawBorder: false,
+                                            color: 'black'
+                                        },
+                                        ticks: {
+                                            color: 'black'
+                                        }
+                                    }
+                                }
+                            },
+                        };
+
+                        const myChart = new Chart(
+                            document.getElementById('myChart'), config
+                        );
+                    </script>
+                </div>
+
+
+            </main>
+        </div>
+        <aside class="drawer-side">
+            <label for="my-drawer-3" class="drawer-overlay"></label>
+            <ul class="p-4 overflow-y-auto menu w-60 md:w-80 bg-base-100">
+                <li><a>Pessoas</a></li>
+                <li><a>Banco</a></li>
+                <li><a>Produtos/Serviços</a></li>
+                <li><a>Caixa</a></li>
+                <li><a>Financeiro</a></li>
+                <li><a>Sistema</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+
+</html>
